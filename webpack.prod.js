@@ -1,19 +1,21 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 module.exports = {
     mode: 'production',
     entry: {
-        app: './src/main.js',
-       
+        app: './src/main.js',      
     },
     //插件
     plugins: [
-
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template:'./index.html'
+         }),
         //每次打包清理dist文件夹
         new CleanWebpackPlugin(),   
+        new VueLoaderPlugin(),
     ],
     //输出
     output: {

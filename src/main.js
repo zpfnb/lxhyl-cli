@@ -9,11 +9,11 @@ axios.defaults.withCredentials =true;
 
 //vue-router
 import VueRouter from 'vue-router';
-// import router from './router/router';
+import router from './router/router';
 Vue.use(VueRouter);
 
 //vuex
-// import store from './store/index'
+import store from './store/index'
 
 //element
 import ElementUI from 'element-ui';
@@ -21,7 +21,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
 new Vue({
-  // router,
-  // store,
+  router,
+  store,
   render: h => h(App),
 }).$mount('#app')
